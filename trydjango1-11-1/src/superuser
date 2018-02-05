@@ -1,0 +1,15 @@
+Username: jhajhajhajha
+email: n/a
+password: testingtesting
+
+Username: helloworld
+email: n/a
+password: testing33
+
+
+
+    #url(r'^restaurants/$', RestaurantListView.as_view(), name='restaurants'),
+    #url(r'^restaurants/create/$', RestaurantCreateView.as_view(), name='restaurants-create'),
+    # url(r'^restaurants/(?P<slug>\w+)/$', RestaurantListView.as_view()),
+    #url(r'^restaurants/(?P<slug>[\w-]+)/$', RestaurantDetailView.as_view(), name='restaurant-detail'),
+    # url(r'^restaurants/asianfusion/$', AsianFusionRestaurantListView.as_view()),
