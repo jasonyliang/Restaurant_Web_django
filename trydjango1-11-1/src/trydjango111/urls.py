@@ -21,12 +21,12 @@ from django.contrib.auth.views import LoginView, password_reset, PasswordResetDo
 
 
 
-from restaurants.views import (
-    RestaurantListView,
-    RestaurantDetailView,
-    RestaurantCreateView
+# from restaurants.views import (
+#     RestaurantListView,
+#     RestaurantDetailView,
+#     RestaurantCreateView
 
-)
+# )
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^password_reset/$', password_reset, name='password_reset'),
     url(r'^password_reset_done/$', PasswordResetDoneView.as_view(), name='password_reset_done'),
+    url(r'^u/', include('profiles.urls', namespace='profiles')),
     url(r'^items/', include('menus.urls', namespace='menus')),
     url(r'^restaurants/', include('restaurants.urls', namespace='restaurants')),
     url(r'^about/$', TemplateView.as_view(template_name = 'about.html'), name='about'),
