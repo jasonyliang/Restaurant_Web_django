@@ -36,6 +36,7 @@ urlpatterns = [
     url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^password_reset/$', password_reset, name='password_reset'),
     url(r'^password_reset_done/$', PasswordResetDoneView.as_view(), name='password_reset_done'),
+    url(r'^items/', include('menus.urls', namespace='menus')),
     url(r'^restaurants/', include('restaurants.urls', namespace='restaurants')),
     url(r'^about/$', TemplateView.as_view(template_name = 'about.html'), name='about'),
     url(r'^contact/$', TemplateView.as_view(template_name = 'contact.html'), name='contact'), #need .as_view to function like a function

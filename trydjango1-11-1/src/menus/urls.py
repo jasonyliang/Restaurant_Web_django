@@ -2,15 +2,15 @@ from django.conf.urls import url
 
 
 from .views import (
-    # restaurant_createview,
-    # restaurant_listview,
-    RestaurantListView,
-    RestaurantDetailView,
-    RestaurantCreateView
-
+    ItemListView,
+    ItemDetailView,
+    ItemCreateView,
+    ItemUpdateView,
 )
 urlpatterns = [
-    url(r'$', RestaurantListView.as_view(), name='list'),
-    url(r'^create/$',  RestaurantCreateView.as_view(), name='create'),
-    url(r'^(?P<slug>[\w-]+)/$', RestaurantDetailView.as_view(), name='detail'),
+    url(r'^$', ItemListView.as_view(), name='list'),
+    url(r'^create/$',  ItemCreateView.as_view(), name='create'),
+    url(r'^(?P<pk>\d+)/$', ItemDetailView.as_view(), name='detail'),
+    url(r'^(?P<pk>\d+)/edit/$', ItemUpdateView.as_view(), name='update'),
+    
 ]
