@@ -22,8 +22,6 @@ from django.contrib.auth.views import LoginView, password_reset, PasswordResetDo
 
 
 from restaurants.views import (
-    restaurant_createview,
-    restaurant_listview,
     RestaurantListView,
     RestaurantDetailView,
     RestaurantCreateView
