@@ -3,6 +3,6 @@
 {% block content%}
 <h1>{{ user.username }}</h1>
 <hr/>
-
-    
+{{ user.restaurantlocation_set.all }} <br/>
+{{ user.items_set.all }}
 {% endblock %}
