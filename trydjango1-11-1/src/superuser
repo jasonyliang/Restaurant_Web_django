@@ -9,6 +9,14 @@ password: testing33
 Username: random-test
 password: test123456
 
+Username: abcuser
+email: abc@yahoo.com
+password: abcabc
+
+Username: abc1
+email: abc1@yahoo.com
+password: abcabcabc
+
     #url(r'^restaurants/$', RestaurantListView.as_view(), name='restaurants'),
     #url(r'^restaurants/create/$', RestaurantCreateView.as_view(), name='restaurants-create'),
     # url(r'^restaurants/(?P<slug>\w+)/$', RestaurantListView.as_view()),
