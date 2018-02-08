@@ -6,7 +6,8 @@ Username: helloworld
 email: n/a
 password: testing33
 
-
+Username: random-test
+password: test123456
 
     #url(r'^restaurants/$', RestaurantListView.as_view(), name='restaurants'),
     #url(r'^restaurants/create/$', RestaurantCreateView.as_view(), name='restaurants-create'),
