@@ -14,6 +14,13 @@ class RegisterForm(forms.ModelForm):
         model = User
         fields = ('username', 'email',)
 
+    def clean_email(self):
+        email = self.cleaned_data.get("email")
+        qs = User.objects.filter(email__iexact=email)
+        if qs.exists():
+            raise forms.ValidationError("Cannot use this email. It's already registered")
+        return email
+
     def clean_password2(self):
         # Check that the two password entries match
         password1 = self.cleaned_data.get("password1")
