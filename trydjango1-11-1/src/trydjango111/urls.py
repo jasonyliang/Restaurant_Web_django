@@ -19,7 +19,7 @@ from django.views.generic.base import TemplateView
 
 from django.contrib.auth.views import LoginView, password_reset, PasswordResetDoneView, LogoutView
 
-from profiles.views import ProfileFollowToggle, RegisterView
+from profiles.views import ProfileFollowToggle, RegisterView, activate_user_view
 from menus.views import HomeView
 # from restaurants.views import (
 #     RestaurantListView,
@@ -34,6 +34,7 @@ urlpatterns = [
     url(r'^login/$', LoginView.as_view(), name='login'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
     url(r'^register/$', RegisterView.as_view(), name='register'),
+    url(r'^activate/(?P<code>[a-z0-9].*)/$', activate_user_view, name='activate'),
     url(r'^profile-follow/$', ProfileFollowToggle.as_view(), name='follow'),
     url(r'^password_reset/$', password_reset, name='password_reset'),
     url(r'^password_reset_done/$', PasswordResetDoneView.as_view(), name='password_reset_done'),
