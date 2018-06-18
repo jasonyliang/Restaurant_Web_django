@@ -38,12 +38,13 @@ class Profile(models.Model):
         if not self.activated:
             self.activation_key = code_generator() #gen key
             self.save()
-            path_=reverse('activate', kwargs={"code": self.activation_key})
+            path_ = reverse('activate', kwargs={"code": self.activation_key})
+            full_path = "https://muypicky.com" + path_
             subject = 'Activate Account'
             from_email = settings.DEFAULT_FROM_EMAIL
-            message = f'Activate your account here: {path_}'
+            message = f'Activate your account here: {full_path}'
             recipient_list = [self.user.email]
-            html_message = f'<p>Activate your account here: {path_}</p>'
+            html_message = f'<p>Activate your account here: {full_path}</p>'
             print(html_message)
             sent_mail = False
             # sent_mail = send_mail(subject, 
